@@ -1,0 +1,45 @@
+﻿@inject IMovieService MovieService
+@implements IDisposable
+
+<center><h2>Top Movies of the Week</h2></center>
+@if (MovieService.Movies == null || MovieService.Movies.Count == 0)
+{
+        <span>@MovieService.Message</span>
+}
+else
+{
+    <div class="container">
+        @foreach (var movie in MovieService.Movies)
+         {
+                @if (movie.Featured)
+                 {
+                        <div class="featured-movie">
+                            <div>
+                                <a href="movie/@movie.Id">
+                                    <img src="@movie.ImageUrl" />
+                                </a>
+                            </div>
+                            <h4><a href="movie/@movie.Id">@movie.Title</a></h4>
+                            @if (movie.Variants != null && movie.Variants.Count > 0)
+                             {
+                                    <h5 class="weekday-price">
+                                        $@movie.Variants[0].WeekDayPrice
+                                    </h5>
+                             }
+                        </div>
+                 }
+         }
+    </div>
+}
+
+@code {
+    protected override void OnInitialized()
+    {
+        MovieService.MoviesChanged += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        MovieService.MoviesChanged -= StateHasChanged;
+    }
+}

@@ -1,0 +1,30 @@
+.media-img[b-18z49z8m9y] {
+    max-height: 200px;
+    max-width: 200px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: transform .2s;
+}
+
+.media-img:hover[b-18z49z8m9y] {
+    transform: scale(1.1);
+}
+
+
+.media-img-wrapper[b-18z49z8m9y] {
+    width: 200px;
+    text-align: center;
+}
+
+
+@media (max-width: 1023.98px) {
+    .media[b-18z49z8m9y] {
+        flex-direction: column;
+    }
+
+    .media-img-wrapper[b-18z49z8m9y] {
+        width: 100%;
+        height: auto;
+    }
+}
+

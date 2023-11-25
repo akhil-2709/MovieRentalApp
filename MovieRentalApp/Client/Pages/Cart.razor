@@ -1,0 +1,119 @@
+﻿@page "/cart"
+@inject ICartService CartService
+@inject IOrderService OrderService
+
+<PageTitle>Shopping Cart</PageTitle>
+
+<h3>Shopping Cart</h3>
+
+
+@if (cartMovies == null || cartMovies.Count == 0)
+{
+        <span>@message</span>
+}
+else if (orderPlaced)
+{
+        <span>Thank you for your order! You can check your orders <a href="orders">here</a></span>
+}
+else
+{
+        <div>
+            @foreach (var movie in cartMovies)
+             {
+                    <div class="container">
+                        <div class="image-wrapper">
+                            <img src="@movie.ImageUrl" class="image" />
+                        </div>
+                        <div class="name">
+                            <h5><a href="/movie/@movie.MovieId">@movie.Title</a></h5>
+                            <span>@movie.MovieType</span><br />
+                            <input type="number" value="@movie.Quantity"
+                                   @onchange="@((ChangeEventArgs e) => UpdateQuantity(e, movie))"
+                                   class="form-control input-quantity"
+                                   min="1" />
+                            <label>Return Date: </label>
+                            <input type="date" value="@movie.ReturnDate"
+                                   @onchange="@((ChangeEventArgs e) => UpdateReturnDate(e, movie))"
+                                   class="form-control input-date"
+                                   />
+                            <button class="btn-delete" @onclick="@(() =>
+                                    RemoveMovieFromCart(movie.MovieId, movie.MovieTypeId))">
+                                Delete
+                            </button>
+                        </div>
+                        <div class="cart-movie-price">
+                            $@(movie.WeekDayPrice * movie.Quantity * getDays(movie.ReturnDate))
+                        </div>
+                    </div>
+             }
+            <div class="cart-movie-price">
+                Total (@cartMovies.Count) : $@cartMovies.Sum(movie => movie.WeekDayPrice * movie.Quantity * getDays(movie.ReturnDate))
+            </div>
+        </div>
+        <button @onclick="PlaceOrder" class="btn alert-success float-end mt-1">Place Order</button>
+}
+
+@code {
+    List<CartMovieResponse> cartMovies = null;
+    string message = "Loading Cart...";
+    bool orderPlaced = false;
+    private DateTime SelectedDate { get; set; } = DateTime.Today;
+
+    private string SelectedDateAsString { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        orderPlaced = false;
+        await LoadCart();
+    }
+
+    private async Task RemoveMovieFromCart(int movieId, int movieTypeId)
+    {
+        await CartService.RemoveMovieFromCart(movieId, movieTypeId);
+        await LoadCart();
+    }
+
+    private async Task LoadCart()
+    {
+        await CartService.GetCartItemsCount();
+        cartMovies = await CartService.GetCartMovies();
+        if (cartMovies == null || cartMovies.Count == 0)
+        {
+            message = "Your cart is empty!";
+
+        }
+    }
+
+    private async Task UpdateQuantity(ChangeEventArgs e, CartMovieResponse movie)
+    { 
+
+        movie.Quantity = int.Parse(e.Value.ToString());
+        if (movie.Quantity < 1)
+            movie.Quantity = 1;
+        await CartService.UpdateQuantity(movie);
+    }
+
+    private async Task UpdateReturnDate(ChangeEventArgs e, CartMovieResponse movie)
+    {
+        string date = e.Value.ToString();
+        Console.WriteLine(e.Value);
+        await CartService.UpdateReturnDate(date, movie);
+        await LoadCart();
+        StateHasChanged();
+    }
+
+    private async Task PlaceOrder()
+    {
+        await OrderService.PlaceOrder();
+        await CartService.GetCartItemsCount();
+        orderPlaced = true;
+    }
+
+    public int getDays(DateTime returnDate)
+    {
+        DateTime currentDate = DateTime.Now;
+        return (returnDate - currentDate).Days;
+    }
+
+    }
+

@@ -1,0 +1,26 @@
+﻿@page "/"
+@page "/{genreUrl}"
+@inject IMovieService MovieService;
+
+<PageTitle>DVD Rentals</PageTitle>
+
+@if (GenreUrl == null)
+{
+    <FeaturedMovies />
+}
+else
+{
+    <MovieList />
+}
+
+
+@code {
+    [Parameter]
+    public string? GenreUrl { get; set; } = null;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await MovieService.GetMovies(GenreUrl);
+    }
+}
+

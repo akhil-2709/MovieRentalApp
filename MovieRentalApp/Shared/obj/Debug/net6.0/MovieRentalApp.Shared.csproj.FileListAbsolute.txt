@@ -1,0 +1,12 @@
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Shared/bin/Debug/net6.0/MovieRentalApp.Shared.deps.json
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Shared/bin/Debug/net6.0/MovieRentalApp.Shared.dll
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Shared/bin/Debug/net6.0/MovieRentalApp.Shared.pdb
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Shared/obj/Debug/net6.0/MovieRentalApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Shared/obj/Debug/net6.0/MovieRentalApp.Shared.AssemblyInfoInputs.cache
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Shared/obj/Debug/net6.0/MovieRentalApp.Shared.AssemblyInfo.cs
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Shared/obj/Debug/net6.0/MovieRentalApp.Shared.csproj.CoreCompileInputs.cache
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Shared/obj/Debug/net6.0/MovieRentalApp.Shared.dll
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Shared/obj/Debug/net6.0/refint/MovieRentalApp.Shared.dll
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Shared/obj/Debug/net6.0/MovieRentalApp.Shared.pdb
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Shared/obj/Debug/net6.0/ref/MovieRentalApp.Shared.dll
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Shared/obj/Debug/net6.0/MovieRentalApp.Shared.csproj.AssemblyReference.cache

@@ -1,0 +1,59 @@
+﻿@inject IMovieService MovieService
+
+@if (MovieService.Movies == null || MovieService.Movies.Count == 0)
+{
+    <span>Loading Movies...</span>
+}
+else
+{
+    <ul class="list-unstyled">
+        @foreach (var movie in MovieService.Movies)
+        {
+            <li class="media my-3">
+                <div class="media-img-wrapper mr-2">
+                    <a href="#">
+                        <img class="media-img" src="@movie.ImageUrl" alt="@movie.Title" />
+                    </a>
+                </div>
+                <div class="media-body">
+                    <a href="/movie/@movie.Id">
+                        <h4 class="mb-0">@movie.Title</h4>
+                    </a>
+                    <p>@movie.Description</p>
+                    <h5 class="price">
+                        @GetPriceText(movie)
+                    </h5>
+                </div>
+            </li>
+        }
+    </ul>
+}
+
+
+@code {
+    protected override void OnInitialized()
+    {
+        MovieService.MoviesChanged += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        MovieService.MoviesChanged -= StateHasChanged;
+    }
+
+    public string GetPriceText(Movie movie)
+    {
+        var variants = movie.Variants;
+        if (variants.Count == 0)
+        {
+            return string.Empty;
+        }
+        //else if (variants.Count == 1)
+        //{
+        //    return $"${variants[0].WeekDayPrice}";
+        //}
+        decimal weekDayPrice = variants.Min(v => v.WeekDayPrice);
+        return $"Starting at ${weekDayPrice}";
+    }
+
+}

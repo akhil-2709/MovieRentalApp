@@ -1,0 +1,109 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = MovieRentalApp.Client
+build_property.RootNamespace = MovieRentalApp.Client
+build_property.ProjectDir = /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Pages/Profile.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZmlsZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVnaXN0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Shared/CartCounter.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0NhcnRDb3VudGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Pages/Cart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2FydC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-qul1s26h6a
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Pages/MovieDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTW92aWVEZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-ztdibsd31z
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Pages/OrderDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvT3JkZXJEZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-6p8c6b3w13
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Pages/Orders.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvT3JkZXJzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-q0d6wfq092
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Shared/FeaturedMovies.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0ZlYXR1cmVkTW92aWVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-goehjjgs6m
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Shared/HomeButton.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0hvbWVCdXR0b24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ficmrl1jz8
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-etmvbut34r
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Shared/MovieList.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01vdmllTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-18z49z8m9y
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-xh64myjy7f
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Shared/ShopLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1Nob3BMYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-dcjmstvz7p
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Shared/ShopNavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1Nob3BOYXZNZW51LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-vwag4cz1jm
+
+[/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/Shared/UserButton.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1VzZXJCdXR0b24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-y03sa3tx12

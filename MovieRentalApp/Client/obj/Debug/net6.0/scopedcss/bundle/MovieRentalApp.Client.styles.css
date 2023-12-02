@@ -1,3 +1,57 @@
+/* /Pages/Admin/EditMovie.razor.rz.scp.css */
+img[b-bt7z3u34vk] {
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.row[b-bt7z3u34vk] {
+    display: flex;
+    padding: 6px;
+}
+
+.col[b-bt7z3u34vk] {
+    flex: 1;
+}
+
+.header[b-bt7z3u34vk] {
+    display: flex;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+}
+
+.col-visible[b-bt7z3u34vk] {
+    text-align: center;
+}
+/* /Pages/Admin/Genres.razor.rz.scp.css */
+.header[b-1x4lq48k7h] {
+    display: flex;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+}
+
+.row[b-1x4lq48k7h] {
+    display: flex;
+    padding: 6px;
+}
+
+.col[b-1x4lq48k7h] {
+    flex: 1;
+}
+
+.col-visible[b-1x4lq48k7h] {
+    text-align: center;
+}
+/* /Pages/Admin/Movies.razor.rz.scp.css */
+img[b-yd8smz2dg6] {
+    max-height: 100px;
+    max-width: 100px;
+}
 /* /Pages/Cart.razor.rz.scp.css */
 .container[b-qul1s26h6a] {
     display: flex;
@@ -127,6 +181,14 @@
     font-weight: 600;
     font-size: 1.2em;
     text-align: right;
+}
+/* /Shared/AdminMenu.razor.rz.scp.css */
+.top-row a[b-kj5uriuoby] {
+    margin-left: 0 !important;
+}
+
+.dropdown-item:hover[b-kj5uriuoby] {
+    background-color: white;
 }
 /* /Shared/FeaturedMovies.razor.rz.scp.css */
 .container[b-goehjjgs6m] {

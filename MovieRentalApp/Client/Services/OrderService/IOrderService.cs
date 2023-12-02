@@ -7,6 +7,7 @@ namespace MovieRentalApp.Client.Services.OrderService
 
 		Task<List<OrderOverviewResponse>> GetOrders();
 		Task<OrderDetailsResponse> GetOrderDetails(int orderId);
+		Task Return(int movieId);
 	}
 }
 

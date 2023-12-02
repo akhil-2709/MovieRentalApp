@@ -15,32 +15,35 @@ else
             <div class="media-body">
                 <h2 class="mb-0">@movie.Title</h2>
                 <p>@movie.Description</p>
-                @if (movie.Variants !=null && movie.Variants.Count > 1)
-                 {
-                        <div>
-                            <select class="form-select" @bind="currentTypeId">
-                                @foreach (var variant in movie.Variants)
-                                 {
-                                        <option value="@variant.MovieTypeId">@variant.MovieType.Name</option>
-                                 }
-                            </select>
-                        </div>
-                 }
+                @if (movie.Variants != null && movie.Variants.Count > 1)
+                {
+                    <div>
+                        <select class="form-select" @bind="currentTypeId">
+                            @foreach (var variant in movie.Variants)
+                            {
+                                <option value="@variant.MovieTypeId">@variant.MovieType.Name</option>
+                            }
+                        </select>
+                    </div>
+                }
                 @if (GetSelectedVariant() != null)
                 {
                     @if (GetSelectedVariant().WeekendPrice > GetSelectedVariant().WeekDayPrice)
-                     {
+                    {
                         <h6 class="text-muted weekend-price">
                             Weekends: $@GetSelectedVariant().WeekendPrice
                         </h6>
-                     }
-                     <h6 class="weekday-price">
+                    }
+                    <h6 class="weekday-price">
                         Weekdays: $@GetSelectedVariant().WeekDayPrice
-                     </h6>
+                    </h6>
+                    <h6 class="weekday-price">
+                        Available: @GetSelectedVariant().Count
+                    </h6>
                 }
-                    <button class="btn btn-primary" @onclick="AddToCart">
-                        <i class="oi oi-cart"></i>&nbsp;&nbsp;&nbsp;Add to Cart
-                    </button>
+                <button class="btn btn-primary" @onclick="AddToCart" disabled="@((GetSelectedVariant()?.Count ?? 0) <= 0)">
+                    <i class="oi oi-cart"></i>&nbsp;&nbsp;&nbsp;Add to Cart
+                </button>
             </div>
         </div>
 }

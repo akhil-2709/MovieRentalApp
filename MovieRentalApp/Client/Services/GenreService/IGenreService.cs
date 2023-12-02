@@ -3,8 +3,15 @@ namespace MovieRentalApp.Client.Services.GenreService
 {
 	public interface IGenreService
 	{
-		List<Genre>Genres { get; set; }
+		event Action OnChange;
+		List<Genre> Genres { get; set; }
+		List<Genre> AdminGenres { get; set; }
 		Task GetGenres();
-	}
+		Task GetAdminGenres();
+		Task AddGenre(Genre genre);
+        Task UpdateGenre(Genre genre);
+        Task DeleteGenre(int genreId);
+		Genre CreateNewGenre();
+    }
 }
 

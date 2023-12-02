@@ -13,7 +13,7 @@
 }
 else if (orderPlaced)
 {
-        <span>Thank you for your order! You can check your orders <a href="orders">here</a></span>
+        <span>Thank you for your order! Please show the generated confirmation receipt at the Exit. You can check your orders <a href="orders">here</a></span>
 }
 else
 {
@@ -85,7 +85,7 @@ else
     }
 
     private async Task UpdateQuantity(ChangeEventArgs e, CartMovieResponse movie)
-    { 
+    {
 
         movie.Quantity = int.Parse(e.Value.ToString());
         if (movie.Quantity < 1)

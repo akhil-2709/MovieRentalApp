@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MovieRentalApp.Server.Controllers
@@ -34,7 +36,15 @@ namespace MovieRentalApp.Server.Controllers
             var result = await _orderService.GetOrderDetails(orderId);
             return Ok(result);
         }
-		
-	}
+
+        [HttpPut]
+        public async Task<ActionResult<bool>> Return(Movie movie)
+        {
+            var result = await _orderService.Return(movie);
+
+            return Ok(result);
+        }
+
+    }
 }
 

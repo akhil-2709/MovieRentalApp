@@ -47,6 +47,9 @@ namespace MovieRentalApp.Server.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -54,6 +57,9 @@ namespace MovieRentalApp.Server.Migrations
                     b.Property<string>("Url")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<bool>("Visible")
+                        .HasColumnType("tinyint(1)");
 
                     b.HasKey("Id");
 
@@ -63,32 +69,42 @@ namespace MovieRentalApp.Server.Migrations
                         new
                         {
                             Id = 1,
+                            Deleted = false,
                             Name = "Comedy",
-                            Url = "comedy"
+                            Url = "comedy",
+                            Visible = true
                         },
                         new
                         {
                             Id = 2,
+                            Deleted = false,
                             Name = "Thriller",
-                            Url = "thriller"
+                            Url = "thriller",
+                            Visible = true
                         },
                         new
                         {
                             Id = 3,
+                            Deleted = false,
                             Name = "Action",
-                            Url = "action"
+                            Url = "action",
+                            Visible = true
                         },
                         new
                         {
                             Id = 4,
+                            Deleted = false,
                             Name = "Rom Com",
-                            Url = "rom-com"
+                            Url = "rom-com",
+                            Visible = true
                         },
                         new
                         {
                             Id = 5,
+                            Deleted = false,
                             Name = "Sci-Fi",
-                            Url = "sci-fi"
+                            Url = "sci-fi",
+                            Visible = true
                         });
                 });
 
@@ -97,6 +113,9 @@ namespace MovieRentalApp.Server.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -116,6 +135,9 @@ namespace MovieRentalApp.Server.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<bool>("Visible")
+                        .HasColumnType("tinyint(1)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("GenreId");
@@ -126,83 +148,101 @@ namespace MovieRentalApp.Server.Migrations
                         new
                         {
                             Id = 1,
+                            Deleted = false,
                             Description = "Neo (Keanu Reeves) believes that Morpheus (Laurence Fishburne), an elusive figure considered to be the most dangerous man alive, can answer his question -- What is the Matrix? Neo is contacted by Trinity (Carrie-Anne Moss), a beautiful stranger who leads him into an underworld where he meets Morpheus. They fight a brutal battle for their lives against a cadre of viciously intelligent secret agents. It is a truth that could cost Neo something more precious than his life.",
                             Featured = true,
                             GenreId = 5,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/b/ba/Poster_-_The_Matrix_Reloaded.jpg",
-                            Title = "The Matrix Reloaded"
+                            Title = "The Matrix Reloaded",
+                            Visible = true
                         },
                         new
                         {
                             Id = 2,
+                            Deleted = false,
                             Description = "In Earth's future, a global crop blight and second Dust Bowl are slowly rendering the planet uninhabitable. Professor Brand (Michael Caine), a brilliant NASA physicist, is working on plans to save mankind by transporting Earth's population to a new home via a wormhole. But first, Brand must send former NASA pilot Cooper (Matthew McConaughey) and a team of researchers through the wormhole and across the galaxy to find out which of three planets could be mankind's new home.",
                             Featured = false,
                             GenreId = 5,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
-                            Title = "Interstellar"
+                            Title = "Interstellar",
+                            Visible = true
                         },
                         new
                         {
                             Id = 3,
+                            Deleted = false,
                             Description = "In 2045 the planet is on the brink of chaos and collapse, but people find salvation in the OASIS: an expansive virtual reality universe created by eccentric James Halliday. When Halliday dies, he promises his immense fortune to the first person to discover a digital Easter egg that's hidden somewhere in the OASIS. When young Wade Watts joins the contest, he finds himself becoming an unlikely hero in a reality-bending treasure hunt through a fantastical world of mystery, discovery and danger.",
                             Featured = false,
                             GenreId = 5,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/7/74/Ready_Player_One_%28film%29.png",
-                            Title = "Ready Player One"
+                            Title = "Ready Player One",
+                            Visible = true
                         },
                         new
                         {
                             Id = 4,
+                            Deleted = false,
                             Description = "In 1987, Jordan Belfort (Leonardo DiCaprio) takes an entry-level job at a Wall Street brokerage firm. By the early 1990s, while still in his 20s, Belfort founds his own firm, Stratton Oakmont. Together with his trusted lieutenant (Jonah Hill) and a merry band of brokers, Belfort makes a huge fortune by defrauding wealthy investors out of millions. However, while Belfort and his cronies partake in a hedonistic brew of sex, drugs and thrills, the SEC and the FBI close in on his empire of excess.",
                             Featured = false,
                             GenreId = 1,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/d/d8/The_Wolf_of_Wall_Street_%282013%29.png",
-                            Title = "The Wolf of Wall Street"
+                            Title = "The Wolf of Wall Street",
+                            Visible = true
                         },
                         new
                         {
                             Id = 5,
+                            Deleted = false,
                             Description = "It's been two years since the gang known as the Wolfpack narrowly escaped disaster in Bangkok. Now, Phil (Bradley Cooper), Stu (Ed Helms) and Doug (Justin Bartha) have happy lives at home -- but Alan (Zach Galifianakis) doesn't. Still lacking contentment and a sense of purpose, Alan has gone off his meds and surrendered to his natural impulses. It's up to the other members of the Wolfpack to get him through his personal crisis by embarking on a road trip to the place it all began: Las Vegas.",
                             Featured = true,
                             GenreId = 1,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/1/15/The_Hangover_Part_3.JPG",
-                            Title = "The Hangover Part III"
+                            Title = "The Hangover Part III",
+                            Visible = true
                         },
                         new
                         {
                             Id = 6,
+                            Deleted = false,
                             Description = "Captured by smugglers when he was just a hatchling, a macaw named Blu (Lorànt Deutsch) never learned to fly but has a happy domesticated life in Minnesota with Linda (Élisabeth Ventura), who thinks he is the last of his breed.",
                             Featured = false,
                             GenreId = 1,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/b/bb/Rio2011Poster.jpg",
-                            Title = "Rio"
+                            Title = "Rio",
+                            Visible = true
                         },
                         new
                         {
                             Id = 7,
+                            Deleted = false,
                             Description = "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
                             Featured = true,
                             GenreId = 2,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/5/53/Parasite_%282019_film%29.png",
-                            Title = "Parasite"
+                            Title = "Parasite",
+                            Visible = true
                         },
                         new
                         {
                             Id = 8,
+                            Deleted = false,
                             Description = "Solitary, cold, methodical and unencumbered by scruples or regrets, a killer waits in the shadows, watching for his next target. Yet, the longer he waits, the more he thinks he's losing his mind, if not his cool.",
                             Featured = false,
                             GenreId = 2,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/3/32/The_Killer_2023_poster.jpg",
-                            Title = "The Killer"
+                            Title = "The Killer",
+                            Visible = true
                         },
                         new
                         {
                             Id = 9,
+                            Deleted = false,
                             Description = "Fleeing a totalitarian country, pregnant Mia must fight for her life when a violent storm knocks the container in which she has been hiding overboard. Trapped, Mia gives birth and is forced to survive to save her baby.",
                             Featured = false,
                             GenreId = 2,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/4/41/Nowhere_%282023_film%29_poster.jpg",
-                            Title = "Nowhere"
+                            Title = "Nowhere",
+                            Visible = true
                         });
                 });
 
@@ -246,6 +286,15 @@ namespace MovieRentalApp.Server.Migrations
                     b.Property<int>("MovieTypeId")
                         .HasColumnType("int");
 
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Visible")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<decimal>("WeekDayPrice")
                         .HasColumnType("decimal(18,2)");
 
@@ -263,6 +312,9 @@ namespace MovieRentalApp.Server.Migrations
                         {
                             MovieId = 1,
                             MovieTypeId = 2,
+                            Count = 5,
+                            Deleted = false,
+                            Visible = true,
                             WeekDayPrice = 6.99m,
                             WeekendPrice = 9.99m
                         },
@@ -270,6 +322,9 @@ namespace MovieRentalApp.Server.Migrations
                         {
                             MovieId = 2,
                             MovieTypeId = 2,
+                            Count = 5,
+                            Deleted = false,
+                            Visible = true,
                             WeekDayPrice = 6.99m,
                             WeekendPrice = 9.99m
                         },
@@ -277,6 +332,9 @@ namespace MovieRentalApp.Server.Migrations
                         {
                             MovieId = 3,
                             MovieTypeId = 2,
+                            Count = 5,
+                            Deleted = false,
+                            Visible = true,
                             WeekDayPrice = 6.99m,
                             WeekendPrice = 9.99m
                         },
@@ -284,6 +342,9 @@ namespace MovieRentalApp.Server.Migrations
                         {
                             MovieId = 4,
                             MovieTypeId = 2,
+                            Count = 5,
+                            Deleted = false,
+                            Visible = true,
                             WeekDayPrice = 6.99m,
                             WeekendPrice = 9.99m
                         },
@@ -291,6 +352,9 @@ namespace MovieRentalApp.Server.Migrations
                         {
                             MovieId = 5,
                             MovieTypeId = 2,
+                            Count = 5,
+                            Deleted = false,
+                            Visible = true,
                             WeekDayPrice = 6.99m,
                             WeekendPrice = 9.99m
                         },
@@ -298,6 +362,9 @@ namespace MovieRentalApp.Server.Migrations
                         {
                             MovieId = 5,
                             MovieTypeId = 3,
+                            Count = 5,
+                            Deleted = false,
+                            Visible = true,
                             WeekDayPrice = 9.99m,
                             WeekendPrice = 11.99m
                         },
@@ -305,6 +372,9 @@ namespace MovieRentalApp.Server.Migrations
                         {
                             MovieId = 6,
                             MovieTypeId = 2,
+                            Count = 5,
+                            Deleted = false,
+                            Visible = true,
                             WeekDayPrice = 6.99m,
                             WeekendPrice = 9.99m
                         },
@@ -312,6 +382,9 @@ namespace MovieRentalApp.Server.Migrations
                         {
                             MovieId = 7,
                             MovieTypeId = 2,
+                            Count = 5,
+                            Deleted = false,
+                            Visible = true,
                             WeekDayPrice = 6.99m,
                             WeekendPrice = 9.99m
                         },
@@ -319,6 +392,9 @@ namespace MovieRentalApp.Server.Migrations
                         {
                             MovieId = 8,
                             MovieTypeId = 2,
+                            Count = 5,
+                            Deleted = false,
+                            Visible = true,
                             WeekDayPrice = 6.99m,
                             WeekendPrice = 9.99m
                         },
@@ -326,6 +402,9 @@ namespace MovieRentalApp.Server.Migrations
                         {
                             MovieId = 9,
                             MovieTypeId = 2,
+                            Count = 5,
+                            Deleted = false,
+                            Visible = true,
                             WeekDayPrice = 6.99m,
                             WeekendPrice = 9.99m
                         },
@@ -333,6 +412,9 @@ namespace MovieRentalApp.Server.Migrations
                         {
                             MovieId = 9,
                             MovieTypeId = 3,
+                            Count = 5,
+                            Deleted = false,
+                            Visible = true,
                             WeekDayPrice = 9.99m,
                             WeekendPrice = 11.99m
                         });
@@ -401,6 +483,10 @@ namespace MovieRentalApp.Server.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("longtext");
 

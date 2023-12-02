@@ -95,6 +95,22 @@ namespace MovieRentalApp.Server.Services.OrderService
             decimal totalPrice = 0;
             movies.ForEach(movie => totalPrice += movie.WeekDayPrice * movie.Quantity * getDays(movie.ReturnDate));
 
+            foreach (var movie in movies)
+            {
+                var movieVariant = await _context.MovieVariants.FirstOrDefaultAsync(mv =>
+                    mv.MovieId == movie.MovieId && mv.MovieTypeId == movie.MovieTypeId);
+                if (movieVariant.Count - movie.Quantity < 0)
+                {
+                    return new ServiceResponse<bool> { Data = false };
+                }
+
+                if (movieVariant != null)
+                {
+                    movieVariant.Count -= movie.Quantity; // Reduce the count by 1
+                }
+
+            }
+
             var orderItems = new List<OrderItem>();
             movies.ForEach(movie => orderItems.Add(new OrderItem
             {
@@ -115,6 +131,7 @@ namespace MovieRentalApp.Server.Services.OrderService
 
             _context.Orders.Add(order);
 
+
             _context.CartItems.RemoveRange(_context.CartItems
                 .Where(ci => ci.UserId == _authService.GetUserId()));
 
@@ -127,6 +144,41 @@ namespace MovieRentalApp.Server.Services.OrderService
         {
             DateTime currentDate = DateTime.Now;
             return (returnDate - currentDate).Days;
+        }
+
+        public async Task<ServiceResponse<bool>> Return(Movie movie)
+        {
+            var dbMovie = await _context.Movies.FindAsync(movie.Id);
+
+            dbMovie.Title = movie.Title;
+            dbMovie.Description = movie.Description;
+            dbMovie.ImageUrl = movie.ImageUrl;
+            dbMovie.GenreId = movie.GenreId;
+            dbMovie.Visible = movie.Visible;
+            dbMovie.Featured = movie.Featured;
+
+            foreach (var variant in movie.Variants)
+            {
+                var dbVariant = await _context.MovieVariants
+                    .SingleOrDefaultAsync(v => v.MovieId == variant.MovieId &&
+                        v.MovieTypeId == variant.MovieTypeId);
+                if (dbVariant == null)
+                {
+                    variant.MovieType = null;
+                    _context.MovieVariants.Add(variant);
+                }
+                else
+                {
+                    dbVariant.MovieTypeId = variant.MovieTypeId;
+                    dbVariant.WeekDayPrice = variant.WeekDayPrice;
+                    dbVariant.WeekendPrice = variant.WeekendPrice;
+                    dbVariant.Count += variant.Count;
+                    dbVariant.Visible = variant.Visible;
+                    dbVariant.Deleted = variant.Deleted;
+                }
+            }
+            await _context.SaveChangesAsync();
+            return new ServiceResponse<bool> { Data = true };
         }
     }
 }

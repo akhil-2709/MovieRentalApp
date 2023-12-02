@@ -1,0 +1,114 @@
+﻿@page "/admin/genres"
+@inject IGenreService GenreService
+@attribute [Authorize(Roles = "Admin")]
+@implements IDisposable
+
+<h3>Genres</h3>
+
+<div class="header">
+    <div class="col">Name</div>
+    <div class="col">Url</div>
+    <div class="col">Visible</div>
+    <div class="col"></div>
+</div>
+
+@foreach (var genre in GenreService.AdminGenres)
+{
+        @if (genre.Editing)
+         {
+                <EditForm Model="editingGenre" OnSubmit="UpdateGenre">
+                    <div class="row">
+                        <div class="col">
+                            <InputText @bind-Value="editingGenre.Name" class="form-control"></InputText>
+                        </div>
+                        <div class="col">
+                            <InputText @bind-Value="editingGenre.Url" class="form-control"></InputText>
+                        </div>
+                        <div class="col col-visible">
+                            <InputCheckbox @bind-Value="editingGenre.Visible" style="transform: scale(1.5,1.5);"></InputCheckbox>
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="oi oi-cloud-upload"></i>
+                            </button>
+                            <button class="btn btn-primary" @onclick="CancelEditing">
+                                <i class="oi oi-circle-x"></i>
+                            </button>
+                        </div>
+                    </div>
+                </EditForm>
+         }
+         else
+         {
+                <div class="row">
+                    <div class="col">
+                        @genre.Name
+                    </div>
+                    <div class="col">
+                        @genre.Url
+                    </div>
+                    <div class="col col-visible">
+                        <span>@(genre.Visible ? "✅" : "")</span>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary" @onclick="(() => EditGenre(genre))">
+                            <i class="oi oi-pencil"></i>
+                        </button>
+                        <button class="btn btn-primary" @onclick="(() => DeleteGenre(genre.Id))">
+                            <i class="oi oi-trash"></i>
+                        </button>
+                    </div>
+                </div>
+         }
+}
+
+<button class="btn btn-primary" @onclick="CreateNewGenre">
+    <i class="oi oi-plus"></i> Add new Genre
+</button>
+
+@code {
+    Genre editingGenre = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GenreService.GetAdminGenres();
+        GenreService.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        GenreService.OnChange -= StateHasChanged;
+    }
+
+    private void CreateNewGenre()
+    {
+        editingGenre = GenreService.CreateNewGenre();
+    }
+
+    private void EditGenre(Genre genre)
+    {
+        genre.Editing = true;
+        editingGenre = genre;
+    }
+
+    private async Task UpdateGenre()
+    {
+        if (editingGenre.IsNew)
+            await GenreService.AddGenre(editingGenre);
+        else
+            await GenreService.UpdateGenre(editingGenre);
+        editingGenre = new Genre();
+    }
+
+    private async Task CancelEditing()
+    {
+        editingGenre = new Genre();
+        await GenreService.GetAdminGenres();
+    }
+
+    private async Task DeleteGenre(int id)
+    {
+        await GenreService.DeleteGenre(id);
+    }
+
+}

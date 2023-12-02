@@ -642,6 +642,11 @@
 /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/bin/Debug/net6.0/Microsoft.Net.Http.Headers.dll
 /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/scopedcss/Pages/Orders.razor.rz.scp.css
 /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/scopedcss/Pages/OrderDetails.razor.rz.scp.css
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/bin/Debug/net6.0/wwwroot/_framework/Newtonsoft.Json.dll
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/bin/Debug/net6.0/wwwroot/_framework/Newtonsoft.Json.dll.gz
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/scopedcss/Shared/AdminMenu.razor.rz.scp.css
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/scopedcss/Pages/Admin/Genres.razor.rz.scp.css
 /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/bin/Debug/net6.0/wwwroot/_framework/dotnet.6.0.25.r71jqooe5t.js
 /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/bin/Debug/net6.0/wwwroot/_framework/icudt.dat
 /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/bin/Debug/net6.0/wwwroot/_framework/icudt.dat.gz
@@ -673,6 +678,7 @@
 /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/build-gz/x+VQYGrl.gz
 /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/build-gz/8NUrQHUJ.gz
 /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/build-gz/SKRs+YCE.gz
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/build-gz/ahFF6sBL.gz
 /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/build-gz/Mr1zIUkh.gz
 /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/build-gz/h8gsH4Xw.gz
 /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/build-gz/FM+xqgN+.gz
@@ -852,3 +858,5 @@
 /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/build-gz/C6Fx72Ra.gz
 /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/build-gz/Bo8cnhk0.gz
 /Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/build-gz/G0WTzCxM.gz
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/scopedcss/Pages/Admin/Movies.razor.rz.scp.css
+/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Client/obj/Debug/net6.0/scopedcss/Pages/Admin/EditMovie.razor.rz.scp.css

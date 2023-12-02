@@ -1,0 +1,87 @@
+﻿@page "/admin/movies"
+@inject IMovieService MovieService
+@inject NavigationManager NavigationManager
+@attribute [Authorize(Roles = "Admin")]
+
+
+<h3>Movies</h3>
+
+@if (MovieService.AdminMovies == null)
+{
+    <span>Loading Movies...</span>
+}
+else
+{
+    <button class="btn btn-primary float-end" @onclick="CreateMovie">
+        <i class="oi oi-plus"> Add new Movie</i>
+    </button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Movie Name</th>
+                <th>Type</th>
+                <th>WeekDay Price</th>
+                <th>Quantity</th>
+                <th>Available</th>
+                <th>Visible</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <Virtualize Items="MovieService.AdminMovies" Context="movie">
+                <tr>
+                    <td><img src="@movie.ImageUrl" /></td>
+                    <td>@movie.Title</td>
+                    <td>
+                        @foreach (var variant in movie.Variants)
+                        {
+                            <span>@variant.MovieType.Name</span><br />
+                        }
+                    </td>
+                    <td>
+                        @foreach (var variant in movie.Variants)
+                        {
+                            <span>@variant.WeekDayPrice</span><br />
+                        }
+                    </td>
+                    <td>
+                        @foreach (var variant in movie.Variants)
+                        {
+                            <span>5</span><br />
+                        }
+                    </td>
+                    <td>
+                        @foreach (var variant in movie.Variants)
+                        {
+                            <span>@variant.Count</span><br />
+                        }
+                    </td>
+                    <td>@(movie.Visible ? "✅" : "")</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="(() => EditMovie(movie.Id))">
+                            <i class="oi oi-pencil"></i>
+                        </button>
+                    </td>
+                </tr>
+            </Virtualize>
+        </tbody>
+    </table>
+}
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await MovieService.GetAdminMovies();
+    }
+
+    void EditMovie(int movieId)
+    {
+        NavigationManager.NavigateTo($"admin/movie/{movieId}");
+    }
+
+    void CreateMovie()
+    {
+        NavigationManager.NavigateTo("admin/movie");
+    }
+}

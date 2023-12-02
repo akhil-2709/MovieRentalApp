@@ -34,77 +34,88 @@ namespace MovieRentalApp.Server.Data
                      MovieId = 1,
                      MovieTypeId = 2,
                      WeekDayPrice = 6.99m,
-                     WeekendPrice = 9.99m
+                     WeekendPrice = 9.99m,
+                     Count = 5
                  },
                  new MovieVariant
                  {
                     MovieId = 2,
                      MovieTypeId = 2,
                      WeekDayPrice = 6.99m,
-                     WeekendPrice = 9.99m
+                     WeekendPrice = 9.99m,
+                     Count = 5
                  },
                  new MovieVariant
                  {
                     MovieId = 3,
                      MovieTypeId = 2,
                      WeekDayPrice = 6.99m,
-                     WeekendPrice = 9.99m
+                     WeekendPrice = 9.99m,
+                     Count = 5
                  },
                  new MovieVariant
                  {
                     MovieId = 4,
                      MovieTypeId = 2,
                      WeekDayPrice = 6.99m,
-                     WeekendPrice = 9.99m
+                     WeekendPrice = 9.99m,
+                     Count = 5
                  },
                  new MovieVariant
                  {
                     MovieId = 5,
                      MovieTypeId = 2,
                      WeekDayPrice = 6.99m,
-                     WeekendPrice = 9.99m
+                     WeekendPrice = 9.99m,
+                     Count = 5
                  },
                  new MovieVariant
                  {
                      MovieId = 5,
                      MovieTypeId = 3,
                      WeekDayPrice = 9.99m,
-                     WeekendPrice = 11.99m
+                     WeekendPrice = 11.99m,
+                     Count = 5
                  },
                  new MovieVariant
                  {
                     MovieId = 6,
                      MovieTypeId = 2,
                      WeekDayPrice = 6.99m,
-                     WeekendPrice = 9.99m
+                     WeekendPrice = 9.99m,
+                     Count = 5
                  },
                  new MovieVariant
                  {
                     MovieId = 7,
                      MovieTypeId = 2,
                      WeekDayPrice = 6.99m,
-                     WeekendPrice = 9.99m
+                     WeekendPrice = 9.99m,
+                     Count = 5
                  },
                  new MovieVariant
                  {
                     MovieId = 8,
                      MovieTypeId = 2,
                      WeekDayPrice = 6.99m,
-                     WeekendPrice = 9.99m
+                     WeekendPrice = 9.99m,
+                     Count = 5
                  },
                  new MovieVariant
                  {
                     MovieId = 9,
                      MovieTypeId = 2,
                      WeekDayPrice = 6.99m,
-                     WeekendPrice = 9.99m
+                     WeekendPrice = 9.99m,
+                     Count = 5
                  },
                  new MovieVariant
                  {
                      MovieId = 9,
                      MovieTypeId = 3,
                      WeekDayPrice = 9.99m,
-                     WeekendPrice = 11.99m
+                     WeekendPrice = 11.99m,
+                     Count = 5
                  }
                 );
 

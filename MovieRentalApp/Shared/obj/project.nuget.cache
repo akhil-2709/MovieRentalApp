@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ETvBSHtYIM5BlO0dY8kdnG0MGbG3NvFqfPRYgHHHrPlvLJB2jZv4zX3U+XnFtFvgYIWCHhYUicSUSi6tolobiA==",
+  "dgSpecHash": "S74mjf6AD0pl3vFoTF8DIWqqTdwdaBfoUhjMOg2AGTJJMFh0jytWIFb0eOD3fgb+bXe1NRTdy96ZBVLB2TJrBQ==",
   "success": true,
   "projectFilePath": "/Users/imakhil/Projects/MovieRentalApp/MovieRentalApp/Shared/MovieRentalApp.Shared.csproj",
-  "expectedPackageFiles": [
-    "/Users/imakhil/.nuget/packages/microsoft.netcore.app.ref/6.0.22/microsoft.netcore.app.ref.6.0.22.nupkg.sha512",
-    "/Users/imakhil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.22/microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

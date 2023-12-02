@@ -15,6 +15,7 @@
     <PackageReference Include="Blazored.LocalStorage" Version="4.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.25" />
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +29,8 @@
     <None Remove="Services\CartService\" />
     <None Remove="Services\AuthService\" />
     <None Remove="Services\OrderService\" />
+    <None Remove="Pages\Admin\" />
+    <None Remove="Services\MovieTypeService\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
@@ -36,5 +39,7 @@
     <Folder Include="Services\CartService\" />
     <Folder Include="Services\AuthService\" />
     <Folder Include="Services\OrderService\" />
+    <Folder Include="Pages\Admin\" />
+    <Folder Include="Services\MovieTypeService\" />
   </ItemGroup>
 </Project>

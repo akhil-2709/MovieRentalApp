@@ -12,6 +12,14 @@ namespace MovieRentalApp.Server.Services.MovieService
         Task<ServiceResponse<List<Movie>>> GetMoviesByGenre(string genreUrl);
 
         Task<ServiceResponse<List<Movie>>> GetFeaturedMovies();
+
+        Task<ServiceResponse<List<Movie>>> GetAdminMovies();
+
+        Task<ServiceResponse<Movie>> CreateMovie(Movie movie);
+
+        Task<ServiceResponse<Movie>> UpdateMovie(Movie movie);
+
+        Task<ServiceResponse<bool>> DeleteMovie(int movieId);
     }
 }
 

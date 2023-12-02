@@ -6,6 +6,7 @@ global using MovieRentalApp.Server.Services.GenreService;
 global using MovieRentalApp.Server.Services.CartService;
 global using MovieRentalApp.Server.Services.AuthService;
 global using MovieRentalApp.Server.Services.OrderService;
+global using MovieRentalApp.Server.Services.MovieTypeService;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -27,6 +28,7 @@ builder.Services.AddScoped<IGenreService, GenreService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IMovieTypeService, MovieTypeService>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {

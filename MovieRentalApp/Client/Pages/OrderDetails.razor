@@ -1,5 +1,7 @@
 ﻿@page "/orders/{orderId:int}"
 @inject IOrderService OrderService
+@inject IMovieService MovieService
+@inject IMovieTypeService MovieTypeService
 
 @if (order == null)
 {
@@ -24,7 +26,7 @@ else
                 </div>
                 <div class="product-price">$@movie.TotalPrice</div>
                 <div>
-                    <button class="btn btn-primary">Return</button>
+                    <button onclick="@(() => Return(movie.MovieId))">Return</button>
                 </div>
             </div>
         }
@@ -37,11 +39,17 @@ else
 @code {
     [Parameter]
     public int OrderId { get; set; }
+    
+    public int movieId;
 
     OrderDetailsResponse order = null;
 
     protected override async Task OnInitializedAsync()
     {
         order = await OrderService.GetOrderDetails(OrderId);
+    }
+    async void Return(int movieId, Ord)
+    {
+        await OrderService.Return(movieId);
     }
 }
